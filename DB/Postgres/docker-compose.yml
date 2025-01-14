@@ -1,0 +1,17 @@
+services:
+  db-postgres:
+    image: postgres:latest
+    container_name: dock-db-psql-port-4040
+    volumes:
+    - pgdata:/var/lib/postgresql/data
+    restart: always
+    ports:
+    - '4040:5432'
+    environment:
+    - POSTGRES_DB=dbdock
+    - POSTGRES_USER=tester
+    - POSTGRES_PASSWORD=123
+
+volumes:
+  pgdata:
+  

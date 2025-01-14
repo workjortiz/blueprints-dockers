@@ -1,0 +1,17 @@
+services:
+  db-mysql:
+    image: mysql:8.4
+    container_name: dock-db-mysql-port-4084
+    volumes:
+    - mysqldata:/var/lib/mysql
+    restart: always
+    ports:
+    - '4084:3306'
+    environment:
+      MYSQL_DATABASE: 'dbdock'
+      MYSQL_USER: 'tester'
+      MYSQL_PASSWORD: '123'
+      MYSQL_ROOT_PASSWORD: '196110'
+
+volumes:
+  mysqldata:
